@@ -1,11 +1,13 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
+    id("kotlinx-serialization")
 }
 
 android {
     namespace = "com.youmu.helper"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -22,6 +24,14 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+    composeOptions {
+        //https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+        kotlinCompilerExtensionVersion = "1.5.1"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -48,7 +58,7 @@ dependencies {
     //https://developer.android.google.cn/jetpack/androidx/releases/compose-ui
     api("androidx.compose.ui:ui:1.6.0-alpha03")
     api("androidx.compose.material3:material3:1.2.0-alpha05")
-    api("androidx.navigation:navigation-compose:2.7.0-rc01")
+    api("androidx.navigation:navigation-compose:2.7.0")
     api("androidx.paging:paging-runtime-ktx:3.2.0")
     api("androidx.paging:paging-compose:3.2.0")
 
@@ -68,6 +78,11 @@ dependencies {
     api("com.valentinilk.shimmer:compose-shimmer:1.0.5")
     //https://github.com/holixfactory/bottomsheetdialog-compose
     api("com.holix.android:bottomsheetdialog-compose:1.4.0")
+    //
+    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+    api("com.squareup.okhttp3:okhttp:4.11.0")
+    api("com.squareup.logcat:logcat:0.1")
+    api("com.github.liangjingkanji:Net:3.6.0")
 
 
 

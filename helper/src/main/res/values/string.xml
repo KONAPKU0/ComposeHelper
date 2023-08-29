@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="me_refreshing">刷新中…</string>
+    <string name="layout_click_retry">点击重试</string>
+    <string name="me_header_pulling">下拉可以刷新</string>
+    <string name="me_header_release">释放立即刷新</string>
+    <string name="me_footer_failed">加载失败</string>
+    <string name="me_footer_nothing">没有更多数据了</string>
+    <!--    <string name="me_footer_loading">正在加载…</string>-->
+
+    <string name="layout_retry">重试</string>
+
+
+</resources>

@@ -1,9 +1,11 @@
 package com.youmu.helper.base
 
+import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
+import com.youmu.helper.utils.language.MultiLanguages
 
 /**
  *@Author weixuan
@@ -25,5 +27,9 @@ abstract class BaseActivity : AppCompatActivity() {
             overrideConfiguration.uiMode = uiMode
         }
         super.applyOverrideConfiguration(overrideConfiguration)
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(MultiLanguages.attach(base?:this))
     }
 }
